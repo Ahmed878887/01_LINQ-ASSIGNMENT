@@ -174,6 +174,20 @@
             .OrderByDescending(p => p.UnitsInStock);
 
             #endregion
+            #region Q04 
+            //4. Sort a list of digits, first by length of their name, and then alphabetically by the name itself.
+            //string [] Arr = {“zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine”};
+            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            var sortedDigits = Arr
+                .OrderBy(word => word.Length)
+                .ThenBy(word => word);
+
+            // Alternative using query syntax
+            var sortedDigits = from word in Arr
+                               orderby word.Length, word
+                               select word;
+            #endregion
 
         }
     }
