@@ -154,6 +154,7 @@
             var sortedProducts = ProductList
               .OrderBy(p => p.ProductName);
             #endregion
+            
             #region Q02
             //2. Uses a custom comparer to do a case-insensitive sort of the words in an array.
             //String [] Arr = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
@@ -166,6 +167,12 @@
             var caseInsensitiveSort = from word in Arr
                                       orderby word.ToLower()
                                       select word;
+            #endregion
+            #region Q03
+            //3. Sort a list of products by units in stock from highest to lowest.
+            var productsByStock = ProductList
+            .OrderByDescending(p => p.UnitsInStock);
+
             #endregion
 
         }
