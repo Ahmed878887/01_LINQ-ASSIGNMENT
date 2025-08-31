@@ -282,6 +282,16 @@ namespace Demo
                                   p.UnitsInStock
                               };
             #endregion
+            #region Q04
+            //4. Determine if the value of int in an array matches their position in the array.
+            //  Int [] Arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+            var positionMatches = numbers
+    .Select((number, index) => new {
+        Number = number,
+        Index = index,
+        MatchesPosition = number == index
+    });
+            #endregion
 
         }
     }
