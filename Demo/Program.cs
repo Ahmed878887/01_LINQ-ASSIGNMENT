@@ -55,6 +55,13 @@
         ProductCount = g.Count()
     });
             #endregion
+            #region Q04
+            //4. Get the total of the numbers in an array.
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            int total = Arr.Sum();
+            
+            #endregion
+
         }
     }
 }
