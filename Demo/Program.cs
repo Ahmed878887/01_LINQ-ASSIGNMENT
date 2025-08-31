@@ -124,6 +124,21 @@
             });
 
             #endregion
+            #region Q13
+            //13. Get the products with the most expensive price in each category.
+            var expensiveProducts = from p in ProductList
+                                    group p by p.Category into categoryGroup
+                                    let maxPrice = categoryGroup.Max(x => x.UnitPrice)
+                                    from product in categoryGroup
+                                    where product.UnitPrice == maxPrice
+                                    select new
+                                    {
+                                        Category = categoryGroup.Key,
+                                        Product = product.ProductName,
+                                        Price = product.UnitPrice
+                                    };
+
+            #endregion
 
 
         }
