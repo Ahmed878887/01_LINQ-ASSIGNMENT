@@ -270,6 +270,18 @@ namespace Demo
                                 Lowercase = word.ToLower()
                             };
             #endregion
+            #region Q03
+            //3. Produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.
+            var productInfo = from p in ProductList
+                              select new
+                              {
+                                  p.ProductID,
+                                  p.ProductName,
+                                  p.Category,
+                                  Price = p.UnitPrice,
+                                  p.UnitsInStock
+                              };
+            #endregion
 
         }
     }
