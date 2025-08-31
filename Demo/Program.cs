@@ -81,6 +81,15 @@
             string[] words = File.ReadAllLines("dictionary_english.txt");
             double averageLength = words.Average(word => word.Length);
             #endregion
+            #region Q09
+            //9. Get the total units in stock for each product category.
+                    var categoryStock = ProductList
+            .GroupBy(p => p.Category)
+            .Select(g => new {
+                Category = g.Key,
+                TotalUnits = g.Sum(p => p.UnitsInStock)
+            });
+                    #endregion
 
 
         }
