@@ -66,6 +66,12 @@
             string[] words = File.ReadAllLines("dictionary_english.txt");
             int totalCharacters = words.Sum(word => word.Length);
             #endregion
+            #region Q06
+            //6. Get the length of the shortest word in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
+            string[] words = File.ReadAllLines("dictionary_english.txt");
+            int shortestLength = words.Min(word => word.Length);
+            #endregion
+
 
         }
     }
