@@ -89,7 +89,16 @@
                 Category = g.Key,
                 TotalUnits = g.Sum(p => p.UnitsInStock)
             });
-                    #endregion
+            #endregion
+            #region Q10
+            //10. Get the cheapest price among each category's products
+            var cheapestByCategory = ProductList
+                .GroupBy(p => p.Category)
+                .Select(g => new {
+                    Category = g.Key,
+                    CheapestPrice = g.Min(p => p.UnitPrice)
+                });
+            #endregion
 
 
         }
