@@ -202,6 +202,18 @@
                               orderby word.Length, word.ToLower()
                               select word;
             #endregion
+            #region Q06
+            //6. Sort a list of products, first by category, and then by unit price, from highest to lowest.
+            var sortedProducts = ProductList
+       .OrderBy(p => p.Category)
+       .ThenByDescending(p => p.UnitPrice);
+
+            // Alternative using query syntax
+            var sortedProducts = from p in ProductList
+                                 orderby p.Category, p.UnitPrice descending
+                                 select p;
+
+            #endregion
 
         }
     }
