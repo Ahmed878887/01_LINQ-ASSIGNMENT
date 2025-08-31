@@ -292,7 +292,21 @@ namespace Demo
         MatchesPosition = number == index
     });
             #endregion
+            #region Q05
+            //5. Returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB.
+            (2, 11), (2, 3), (2, 7), (2, 8)
 
+            (4, 11), (4, 7), (4, 8)
+
+            (6, 11), (6, 7), (6, 8)
+
+            (8, 11)
+
+            (9, 11)
+
+            (10, 11)
+
+            #endregion
         }
     }
 }
