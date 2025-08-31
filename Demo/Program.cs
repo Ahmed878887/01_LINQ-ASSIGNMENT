@@ -312,6 +312,12 @@ namespace Demo
             SELECT* FROM orders WHERE order_total < 500.00;
 
             #endregion
+            #region Q07
+            //7. Select all orders where the order was made in 1998 or later.
+
+            SELECT* FROM orders WHERE YEAR(order_date) >= 1998;
+
+            #endregion
         }
     }
 }
