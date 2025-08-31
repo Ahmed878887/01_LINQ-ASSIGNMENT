@@ -113,6 +113,17 @@
                                        Price = product.UnitPrice
                                    };
             #endregion
+            #region Q12
+            //12. Get the most expensive price among each category's products.
+
+                    var expensiveByCategory = ProductList
+            .GroupBy(p => p.Category)
+            .Select(g => new {
+                Category = g.Key,
+                MostExpensive = g.Max(p => p.UnitPrice)
+            });
+
+            #endregion
 
 
         }
