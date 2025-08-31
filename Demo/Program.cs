@@ -26,7 +26,14 @@
             .Where(n => n > 5)
             .OrderBy(n => n)
             .ElementAt(1);
-                    #endregion
+            #endregion
+            #region LINQ - Aggregate Operators
+            //1. Uses Count to get the number of odd numbers in the array
+            //Int [] Arr = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            int oddCount = Arr.Count(n => n % 2 != 0);
+            #endregion
         }
     }
 }
