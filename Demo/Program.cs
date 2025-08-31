@@ -76,6 +76,11 @@
             string[] words = File.ReadAllLines("dictionary_english.txt");
             int longestLength = words.Max(word => word.Length);
             #endregion
+            #region Q08
+            //8. Get the average length of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
+            string[] words = File.ReadAllLines("dictionary_english.txt");
+            double averageLength = words.Average(word => word.Length);
+            #endregion
 
 
         }
