@@ -1,4 +1,6 @@
-﻿namespace Demo
+﻿using System.Diagnostics.Metrics;
+
+namespace Demo
 {
     internal class Program
     {
@@ -227,6 +229,30 @@
             var sortedWords = from word in Arr
                               orderby word.Length, word.ToLower() descending
                               select word;
+
+            #endregion
+            #region Q08
+
+            // 8.Create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array.
+            //string [] Arr = {“zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine”};
+            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            var result = Arr
+                .Where(word => word.Length > 1 && word[1] == 'i')  // Filter words with second letter 'i'
+                .Reverse();                                         // Reverse the order
+
+        
+            // Using query syntax
+            var result = from word in Arr
+                         where word.Length > 1 && word[1] == 'i'
+                         select word into filteredWord
+                         orderby filteredWord descending  
+                         select filteredWord;
+
+            
+            var filteredWords = Arr.Where(word => word.Length > 1 && word[1] == 'i').ToList();
+            var reversedResult = filteredWords.AsEnumerable().Reverse();
+
 
             #endregion
 
