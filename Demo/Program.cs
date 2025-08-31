@@ -307,6 +307,11 @@ namespace Demo
             (10, 11)
 
             #endregion
+            #region Q06
+            //6. Select all orders where the order total is less than 500.00.
+            SELECT* FROM orders WHERE order_total < 500.00;
+
+            #endregion
         }
     }
 }
