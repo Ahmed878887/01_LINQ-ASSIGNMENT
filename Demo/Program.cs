@@ -260,6 +260,16 @@ namespace Demo
             var productNames = ProductList
              .Select(p => p.ProductName);
             #endregion
+            #region Q02 
+            //2. Produce a sequence of the uppercase and lowercase versions of each word in the original array (Anonymous Types).
+            var wordCases = from word in words
+                            select new
+                            {
+                                Original = word,
+                                Uppercase = word.ToUpper(),
+                                Lowercase = word.ToLower()
+                            };
+            #endregion
 
         }
     }
