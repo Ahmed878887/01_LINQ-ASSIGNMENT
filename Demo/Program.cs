@@ -149,6 +149,11 @@
             });
 
             #endregion
+            #region LINQ - Ordering Operators
+            //1. Sort a list of products by name
+            var sortedProducts = ProductList
+              .OrderBy(p => p.ProductName);
+            #endregion
 
 
         }
