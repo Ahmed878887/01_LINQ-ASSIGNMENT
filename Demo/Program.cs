@@ -99,6 +99,20 @@
                     CheapestPrice = g.Min(p => p.UnitPrice)
                 });
             #endregion
+            #region Q11
+            //11. Get the products with the cheapest price in each category (Use Let)
+            var cheapestProducts = from p in ProductList
+                                   group p by p.Category into categoryGroup
+                                   let minPrice = categoryGroup.Min(x => x.UnitPrice)
+                                   from product in categoryGroup
+                                   where product.UnitPrice == minPrice
+                                   select new
+                                   {
+                                       Category = categoryGroup.Key,
+                                       Product = product.ProductName,
+                                       Price = product.UnitPrice
+                                   };
+            #endregion
 
 
         }
