@@ -188,6 +188,20 @@
                                orderby word.Length, word
                                select word;
             #endregion
+            #region Q05
+            //5. Sort first by-word length and then by a case-insensitive sort of the words in an array.
+            //String [] Arr = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
+            string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            var sortedWords = Arr
+                .OrderBy(word => word.Length)
+                .ThenBy(word => word, StringComparer.OrdinalIgnoreCase);
+
+            // Alternative using query syntax
+            var sortedWords = from word in Arr
+                              orderby word.Length, word.ToLower()
+                              select word;
+            #endregion
 
         }
     }
