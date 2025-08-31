@@ -44,6 +44,17 @@
         OrderCount = c.Orders.Count()
     });
             #endregion
+
+            #region Q03
+            //3. Return a list of categories and how many products each has
+
+            var categoryProductCounts = ProductList
+    .GroupBy(p => p.Category)
+    .Select(g => new {
+        Category = g.Key,
+        ProductCount = g.Count()
+    });
+            #endregion
         }
     }
 }
