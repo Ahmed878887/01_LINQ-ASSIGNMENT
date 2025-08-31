@@ -214,6 +214,21 @@
                                  select p;
 
             #endregion
+            #region Q07
+            //7. Sort first by-word length and then by a case-insensitive descending sort of the words in an array.
+            //String [] Arr = {"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
+            string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+
+            var sortedWords = Arr
+                .OrderBy(word => word.Length)
+                .ThenByDescending(word => word, StringComparer.OrdinalIgnoreCase);
+
+            // Alternative using query syntax
+            var sortedWords = from word in Arr
+                              orderby word.Length, word.ToLower() descending
+                              select word;
+
+            #endregion
 
         }
     }
